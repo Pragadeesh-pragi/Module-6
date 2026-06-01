@@ -29,7 +29,31 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
 ---
 
 ## 💻 Program
-
+```
+from abc import ABC, abstractmethod
+import math
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+class Rectangle(Shape):
+    def __init__(self, length=5, breadth=3):
+        self.length = length
+        self.breadth = breadth
+    def calculate_area(self):
+        return self.length * self.breadth
+class Circle(Shape):
+    def __init__(self, radius=4):
+        self.radius = radius
+    def calculate_area(self):
+        return math.pi * (self.radius ** 2)
+rect = Rectangle()
+circle = Circle()
+print("Rectangle area:", rect.calculate_area())
+print("Circle area:", circle.calculate_area())
+```
 ## Output
+<img width="1261" height="891" alt="image" src="https://github.com/user-attachments/assets/4b8c4027-a311-4be5-b5bf-ff6db162367c" />
 
 ## Result
+Thus To create an abstract class named Shape with an abstract method calculate_area, and implement this method in two subclasses: Rectangle and Circle has been executed sucessfully.
